@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	if len(os.Args) != 1 {
+	if len(os.Args) != 2 {
 		log.Fatal("Usage: youtube [playlist name]")
 	}
-	playlist := os.Args[0]
+	playlist := os.Args[1]
 
 	client, err := youtube.NewClient()
 	if err != nil {
