@@ -15,10 +15,10 @@ func (c *Client) CreatePlaylist(name string) error {
 		},
 	}
 	call := c.service.Playlists.Insert("snippet", playlist)
-	resp, err := call.Do()
+	response, err := call.Do()
 	if err != nil {
 		return fmt.Errorf("can't send a request: %v", err)
 	}
-	fmt.Println(resp)
+	fmt.Println(response.Id)
 	return nil
 }
