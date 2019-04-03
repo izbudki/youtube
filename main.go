@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -15,7 +16,7 @@ const (
 
 func main() {
 	if len(os.Args) != 2 {
-		log.Fatal("Usage: youtube [playlist name]")
+		log.Fatal("Usage: youtube [broadcast name]")
 	}
 	name := os.Args[1]
 
@@ -42,4 +43,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("can't create a new broadcast: %v", err)
 	}
+	ii, err := client.EncoderSetup()
+	fmt.Println(ii.ServerURL, ii.StreamKey)
 }
